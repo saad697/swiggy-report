@@ -5,20 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Swiggy SDLC Report</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800 leading-relaxed tracking-wide">
   <div class="max-w-5xl mx-auto p-6">
-    <h1 class="text-4xl font-bold text-orange-600 mb-2">SDLC Report for Swiggy</h1>
-    <p class="text-md text-gray-600 mb-6">Done by: <strong>Saaduddin Baig</strong></p>
+    <h1 class="text-4xl font-bold text-orange-600 mb-2" data-aos="fade-down">SDLC Report for Swiggy</h1>
+    <p class="text-md text-gray-600 mb-6" data-aos="fade-right">Done by: <strong>Saaduddin Baig</strong></p>
 
-    <section class="mb-8">
+    <!-- INTRODUCTION -->
+    <section class="mb-8" data-aos="fade-up">
       <h2 class="text-2xl font-semibold text-gray-800 mb-2">1. Introduction</h2>
-      <p>Swiggy, a pioneer in India's food delivery ecosystem, has grown rapidly by leveraging advanced technology to enhance its service quality and operational scalability...</p>
+      <p>Swiggy, a pioneer in India's food delivery ecosystem, has grown rapidly by leveraging advanced technology to enhance its service quality and operational scalability. With an increasing customer base and a dynamic market, Swiggy aims to consistently improve its technological infrastructure. This SDLC report focuses on the revamp of Swiggy’s Order Management and Tracking System (OMTS) to meet increasing demand, reduce order processing delays, and enhance real-time tracking.</p>
     </section>
 
-    <section class="mb-8">
+    <!-- SDLC OVERVIEW -->
+    <section class="mb-8" data-aos="fade-up">
       <h2 class="text-2xl font-semibold text-gray-800 mb-2">2. SDLC Overview</h2>
-      <p>The Software Development Life Cycle (SDLC) is a step-by-step process used for planning, creating, testing, and deploying systems. It includes:</p>
+      <p>The Software Development Life Cycle (SDLC) is a structured step-by-step process used for planning, creating, testing, and deploying software systems. Swiggy follows SDLC to ensure systems are robust, scalable, and customer-centric.</p>
       <ul class="list-decimal pl-6 mt-2 text-gray-700">
         <li>Requirement Gathering & Analysis</li>
         <li>System Design</li>
@@ -30,67 +38,166 @@
       <div class="mt-4">
         <label class="block mb-1 text-sm font-medium text-gray-700">Phase Completion Progress</label>
         <div class="w-full bg-gray-200 rounded-full h-4">
-          <div class="bg-orange-500 h-4 rounded-full" style="width: 100%;"></div>
+          <div class="bg-orange-500 h-4 rounded-full animate-pulse" style="width: 100%;"></div>
         </div>
       </div>
     </section>
 
     <!-- PHASES -->
-    <section class="mb-8">
+    <section class="mb-8" data-aos="fade-up">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">3. SDLC Phases</h2>
 
       <!-- Each Phase -->
       <div class="grid grid-cols-1 gap-6">
-        <!-- Phase Card -->
-        <div class="bg-white shadow rounded-lg p-5">
-          <h3 class="text-xl font-bold mb-2 text-orange-500">3.1 Requirement Gathering & Analysis</h3>
-          <p>This phase involves understanding the needs of stakeholders including customers, delivery partners, restaurant vendors, and internal teams...</p>
+        <div class="bg-white p-5 shadow rounded">
+          <h3 class="text-xl font-bold text-orange-500 mb-2">3.1 Requirement Gathering & Analysis</h3>
+          <p>This phase involves understanding the needs of all stakeholders, including customers, delivery partners, restaurant vendors, and internal teams. The BA collects inputs via interviews, surveys, and analysis of historical data. Key goals include identifying delays in delivery, tracking inefficiencies, and issues with order allocation.</p>
           <h4 class="font-semibold mt-3">Deliverables:</h4>
-          <ul class="list-disc ml-6 text-sm">
+          <ul class="list-disc pl-5 text-sm">
             <li>Business Requirements Document (BRD)</li>
-            <li>Functional & Non-functional Specs</li>
+            <li>Functional and Non-functional Requirement Specification</li>
             <li>Use Case and Workflow Diagrams</li>
             <li>Stakeholder Analysis</li>
           </ul>
         </div>
 
-        <!-- Repeat for all phases similarly -->
-        <div class="bg-white shadow rounded-lg p-5">
-          <h3 class="text-xl font-bold mb-2 text-orange-500">3.2 System Design</h3>
-          <p>System architects design a scalable solution capable of handling high order volumes. Microservices are used for modularity...</p>
+        <div class="bg-white p-5 shadow rounded">
+          <h3 class="text-xl font-bold text-orange-500 mb-2">3.2 System Design</h3>
+          <p>In this phase, system architects design a scalable solution capable of handling high order volumes. Microservices architecture is proposed for modularity, and real-time databases like Firebase or Redis are used for fast order status updates. UI/UX is tailored for both customers and delivery partners to ensure ease of use.</p>
           <h4 class="font-semibold mt-3">Deliverables:</h4>
-          <ul class="list-disc ml-6 text-sm">
-            <li>High-Level and Low-Level Design Docs</li>
+          <ul class="list-disc pl-5 text-sm">
+            <li>High-Level and Low-Level Design Documents</li>
             <li>Database Schema</li>
             <li>API Contracts</li>
-            <li>UI/UX Prototypes</li>
+            <li>UI/UX Prototypes and Wireframes</li>
           </ul>
         </div>
 
-        <!-- Add more cards for 3.3 to 3.6 similarly -->
+        <div class="bg-white p-5 shadow rounded">
+          <h3 class="text-xl font-bold text-orange-500 mb-2">3.3 Implementation / Development</h3>
+          <p>Developers begin coding based on final designs. Swiggy follows Agile methodology using 2-week sprints. Backend services are developed in Python and Node.js, mobile apps in Kotlin and Swift. APIs handle order placement, tracking, partner allocation, and payment integration.</p>
+          <h4 class="font-semibold mt-3">Technologies Used:</h4>
+          <ul class="list-disc pl-5 text-sm">
+            <li>Languages: Python, Node.js, Kotlin, Swift</li>
+            <li>Frameworks: Express.js, Django</li>
+            <li>Databases: PostgreSQL, MongoDB, Redis</li>
+            <li>Tools: Docker, Jenkins, Git, Kafka</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded">
+          <h3 class="text-xl font-bold text-orange-500 mb-2">3.4 Testing</h3>
+          <p>Comprehensive testing is performed to ensure reliability. Functional tests verify core features, load tests ensure the system handles peak hours. Automated scripts reduce manual testing efforts. UAT is conducted with selected restaurants and delivery partners.</p>
+          <h4 class="font-semibold mt-3">Deliverables:</h4>
+          <ul class="list-disc pl-5 text-sm">
+            <li>Unit and Integration Test Reports</li>
+            <li>Automation Scripts</li>
+            <li>Load and Stress Testing Results</li>
+            <li>Bug Logs and Fix Reports</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded">
+          <h3 class="text-xl font-bold text-orange-500 mb-2">3.5 Deployment</h3>
+          <p>The deployment strategy follows a blue-green model to avoid downtime. Features are rolled out regionally to monitor stability. Swiggy uses AWS with auto-scaling and monitoring tools to ensure high availability.</p>
+          <h4 class="font-semibold mt-3">Deliverables:</h4>
+          <ul class="list-disc pl-5 text-sm">
+            <li>Deployment Playbooks</li>
+            <li>Release Notes</li>
+            <li>User Manuals and Training Material</li>
+            <li>Fallback and Rollback Strategies</li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-5 shadow rounded">
+          <h3 class="text-xl font-bold text-orange-500 mb-2">3.6 Maintenance</h3>
+          <p>After deployment, the system is monitored in real time. Customer feedback is collected, and critical bugs are patched. Performance is analyzed regularly for future enhancements. Logs and metrics aid in capacity planning.</p>
+          <h4 class="font-semibold mt-3">Deliverables:</h4>
+          <ul class="list-disc pl-5 text-sm">
+            <li>Maintenance Reports</li>
+            <li>Enhancement Backlog</li>
+            <li>Performance Monitoring Dashboards</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-2">4. Benefits Realized</h2>
+    <!-- GRAPHS SECTION -->
+    <section class="mb-8" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">4. Data Visualizations</h2>
+
+      <!-- Bar Chart -->
+      <div class="bg-white p-4 shadow rounded mb-6">
+        <h3 class="text-lg font-semibold text-orange-500 mb-2">Order-to-Delivery Time Reduction</h3>
+        <canvas id="deliveryChart" height="200"></canvas>
+      </div>
+
+      <!-- Pie Chart -->
+      <div class="bg-white p-4 shadow rounded">
+        <h3 class="text-lg font-semibold text-orange-500 mb-2">System Uptime vs Downtime</h3>
+        <canvas id="uptimeChart" height="200"></canvas>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="mb-8" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-2">5. Benefits Realized</h2>
       <ul class="list-disc pl-6 text-gray-700">
-        <li>Reduced order-to-delivery time by 30%</li>
-        <li>99.95% system uptime</li>
-        <li>Enhanced customer satisfaction via real-time ETA</li>
-        <li>20% improvement in delivery partner utilization</li>
+        <li>Reduced average order-to-delivery time by 30%</li>
+        <li>Improved system uptime to 99.95%</li>
+        <li>Enhanced customer satisfaction via real-time ETA updates</li>
+        <li>Optimized delivery partner utilization by 20%</li>
       </ul>
     </section>
 
-    <!-- Conclusion -->
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-2">5. Conclusion</h2>
-      <p>The SDLC-driven redesign of Swiggy’s Order Management and Tracking System successfully addressed scalability, reliability, and responsiveness...</p>
+    <!-- CONCLUSION -->
+    <section class="mb-12" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-2">6. Conclusion</h2>
+      <p>The SDLC-driven redesign of Swiggy’s Order Management and Tracking System successfully addressed scalability, reliability, and real-time responsiveness. By aligning the technical solution with business goals and following a structured development approach, Swiggy continues to lead in customer satisfaction and operational efficiency in the food delivery domain.</p>
     </section>
 
+    <!-- FOOTER -->
     <footer class="text-center text-sm text-gray-500 mt-10 border-t pt-6">
-      &copy; 2025 SDLC Report by Saaduddin Baig. Tailwind CSS Styled.
+      &copy; 2025 SDLC Report by Saaduddin Baig. Tailwind CSS + Chart.js + AOS.
     </footer>
   </div>
+
+  <!-- Chart.js Scripts -->
+  <script>
+    const deliveryCtx = document.getElementById('deliveryChart').getContext('2d');
+    new Chart(deliveryCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Before', 'After'],
+        datasets: [{
+          label: 'Avg Delivery Time (min)',
+          data: [40, 28],
+          backgroundColor: ['#f56565', '#48bb78']
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    const uptimeCtx = document.getElementById('uptimeChart').getContext('2d');
+    new Chart(uptimeCtx, {
+      type: 'pie',
+      data: {
+        labels: ['Uptime (99.95%)', 'Downtime (0.05%)'],
+        datasets: [{
+          data: [99.95, 0.05],
+          backgroundColor: ['#4299e1', '#f6ad55']
+        }]
+      }
+    });
+  </script>
+
+  <!-- AOS Script -->
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
